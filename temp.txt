@@ -1,0 +1,53 @@
+<main>
+    <section id="apply" class="apply-section">
+        <h1>Apply to Join Data Visualization at IU</h1>
+        <div class="apply-content">
+            <div class="how-to-join">
+                <h2>How to Join</h2>
+                <p>Ready to turn data into impactful stories? Eager to unlock the power of data? Curious about how data can drive decisions? Dive into the world of visualization with us!</p> 
+                <p>Students should apply for membership at the start of each semester. Fall 2024 applications open on Monday, August 26th and will close on Friday, September 6th. We’re looking for enthusiastic members who are excited to learn and grow with us in the world of data visualization. We can’t wait to have you on board!</p>
+
+                <div class="calendar">
+                <p>Starting in the Fall 2024 semester, participation in the Data Visualization Club will require participation in our semester case competition. Please review the competition dates on our <a href="current-semester.html">calendar</a> and ensure there are no conflicts with your schedule before applying.</p>
+                </div>
+                <a href="membership-application-link" class="apply-link">Apply for Membership</a>
+            </div>
+            <div class="why-join">
+                <h2>Why You Should Join</h2>
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="carousel-item">
+                            <img src="networking.webp" alt="Networking Opportunities">
+                            <h3>Networking Opportunities</h3>
+                            <p>Connect with like-minded individuals, club alumni, and industry professionals who can provide valuable insights and opportunities.</p>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="learningexperience.webp" alt="Learning Experience">
+                            <h3>Learning Experience</h3>
+                            <p>Gain hands-on experience with tools like Tableau, Power BI, and Salesforce, and learn from workshops and guest speakers.</p>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="careerdevelopment.webp" alt="Career Development">
+                            <h3>Career Development</h3>
+                            <p>Participate in resume reviews, interview prep sessions, and meetings with corporate sponsors to prepare for a successful career in the business world.</p>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="professionalgrowth.webp" alt="Professional Growth">
+                            <h3>Professional Growth</h3>
+                            <p>Develop a unique skillset in data manipulation and visualization that will give you a competitive edge in your career.</p>
+                        </div>
+                    </div>
+                    <button class="carousel-button prev">&#x276E;</button>
+                    <button class="carousel-button next">&#x276F;</button>
+                </div>
+                <div class="dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <p>In today's data-driven world, having strong data visualization skills are essential for success in any business career. Join us and start your journey towards becoming a data visualization expert!</p>
+            </div>
+        </div>
+    </section>
+</main>

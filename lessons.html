@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Lessons | DV at IU</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f4f8;
+        }
+
+        header {
+            height: 110px;
+        }
+
+        .page-content {
+            padding-left: 20%;
+            padding-right: 20%;
+        }
+
+        /* Section styles */
+        .lessons-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            margin-top: 140px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #245c6c;
+        }
+
+        .lessons-description p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #1f9755;
+        }
+
+        /* Ensure the timeline container can stretch */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #1f9755;
+        }
+
+        /* Timeline line styling */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #1f9755;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 100%;
+        }
+
+        /* Ensure proper card positioning */
+        .timeline-card {
+            padding: 15px;
+            background-color: white;
+            position: relative;
+            width: 40%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        /* Adjust card styling */
+        .timeline-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .timeline-card h2 {
+            font-size: 1.2em;
+            margin: 0;
+            color: #333;
+        }
+
+        .timeline-card p {
+            margin: 5px 0;
+            font-size: 1em;
+            color: #666;
+        }
+
+        /* Positioning the cards */
+        .timeline-card.left {
+            align-self: flex-start;
+            margin-right: 50%;
+        }
+
+        .timeline-card.right {
+            align-self: flex-end;
+            margin-left: 50%;
+        }
+
+        .timeline-card::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: 15px;
+            border-style: solid;
+        }
+
+        .timeline-card.left::after {
+            left: 100%;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+
+        .timeline-card.right::after {
+            right: 100%;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+
+
+        /* Mobile menu styles */
+        .mobile-menu {
+            display: none; /* Hide by default */
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            background-color: #ffffff;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 200px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-menu li {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .mobile-menu a:hover {
+            background-color: #f0f4f8;
+        }
+
+        /* Show the mobile menu when toggled */
+        .mobile-menu.show {
+            display: block;
+        }
+
+        /* Style for the mobile menu button */
+        .mobile-menu-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            line-height: 1;
+            padding: 10px;
+            display: none; /* Hide by default */
+        }
+
+        .mobile-menu-icon::before {
+            content: "☰"; /* Hamburger icon */
+        }
+
+        /* Hide desktop menu on mobile */
+        .desktop-menu {
+            display: flex;
+        }
+
+        @media (max-width: 768px) {
+            .desktop-menu {
+                display: none; /* Hide desktop menu on mobile */
+            }
+
+            .mobile-menu-button {
+                display: block; /* Show the mobile menu button on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="dv logo.png" alt="DV Logo" class="logo">
+            <span class="header-text">Data Visualization at IU</span>
+        </div>
+        <nav>
+            <ul class="desktop-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="team.html">Meet our Team</a></li>
+                <li><a href="lessons.html">Our Lessons</a></li>
+                <li><a href="professional-development.html">Professional Development</a></li>
+                <li><a href="current-semester.html">Calendar</a></li>
+                <li><a href="partner-with-us.html">Partner with Us</a></li>
+                <li><a href="apply.html">Join Us</a></li>
+            </ul>
+            <!-- Mobile menu button -->
+            <button class="mobile-menu-button" aria-label="Toggle menu">
+                <span class="mobile-menu-icon"></span>
+            </button>
+        </nav>
+        <!-- Mobile menu -->
+        <ul class="mobile-menu">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="team.html">Meet our Team</a></li>
+            <li><a href="lessons.html">Our Lessons</a></li>
+            <li><a href="professional-development.html">Professional Development</a></li>
+            <li><a href="current-semester.html">Calendar</a></li>
+            <li><a href="partner-with-us.html">Partner with Us</a></li>
+            <li><a href="apply.html">Join Us</a></li>
+        </ul>
+    </header>
+
+    <div class="page-content">
+        <section class="lessons-container">
+            <div class="section-header">
+                <h2>Our Lessons</h2>
+            </div>
+            <div class="lessons-description">
+                <p>
+                    Teaching a <span class="highlight">new tool</span> every semester is a cornerstone of our approach at Data Visualization at IU because it ensures our members are equipped with the latest skills and technologies in the rapidly evolving field of data analytics and visualization. By introducing new tools regularly, we empower our members to stay ahead of industry trends, enabling them to tackle diverse challenges with confidence and innovation. This approach not only enhances their <span class="highlight">technical proficiency</span> but also fosters a <span class="highlight">dynamic learning environment</span> where creativity and problem-solving thrive. Each semester, we aim to broaden our members' skill sets, preparing them to excel in both academic pursuits and future professional endeavors within the competitive landscape of data-driven industries. Check out the history of the software we've taught below:
+                </p>
+            </div>
+        </section>
+
+        <section class="timeline" id="timeline">
+            <!-- Timeline cards will be dynamically generated by JavaScript -->
+        </section>
+    </div>
+
+    <footer>
+        <p>Data Visualization at IU<br>
+        Kelley School of Business at Indiana University<br>
+        1275 E 10th St, Bloomington, IN 47405</p>
+        <div class="footer-links">
+            <a href="https://www.instagram.com/dataviz_iu/" target="_blank"><img src="instagram-icon.png" alt="Instagram"></a>
+            <a href="mailto:DataVisualizationAtIU@gmail.com"><img src="email-icon.png" alt="Email"></a>
+            <a href="http://www.linkedin.com/company/data-visualization-at-iu/" target="_blank"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+        </div>
+    </footer>
+
+    <script>
+        // Data for the timeline
+        const timelineData = [
+            { date: 'Fall 2024', tool: 'Tableau', image: 'tableau.jpg' },
+            { date: 'Spring 2024', tool: 'R', image: 'r.svg.png' },
+            { date: 'Fall 2023', tool: 'Power BI', image: 'powerbi.png' },
+            { date: 'Spring 2023', tool: 'Python', image: 'python.png' },
+        ];
+
+        const timelineContainer = document.getElementById('timeline');
+
+        timelineData.forEach((item, index) => {
+            const card = document.createElement('div');
+            card.className = 'timeline-card ' + (index % 2 === 0 ? 'left' : 'right');
+
+            card.innerHTML = `
+                <img src="${item.image}" alt="${item.tool}">
+                <h2>${item.date}</h2>
+                <p>${item.tool}</p>
+            `;
+
+            timelineContainer.appendChild(card);
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+
+            mobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.toggle('show');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+/* Reset styles and basic setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    color: #333; /* Default text color */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white; /* Updated green color */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow to the bottom */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+}
+
+.header-text {
+    color: #1faebd;
+    font-size: 1.5em; /* Adjust text size as needed */
+    font-weight: bold; /* Make text bold */
+    margin-left: 10px; /* Adjust spacing */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+nav li:last-child {
+    padding-right: 20px; /* Adjust to match the padding of the logo */
+}
+
+nav a {
+    text-decoration: none;
+    color: #1f9755;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 1.1em; /* Adjust text size as needed */
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url('hero.webp') no-repeat center center/cover; /* Ensure this path is correct */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-top: 80px; /* Adjusted margin to reduce gap */
+    overflow: hidden; /* Ensures children do not overflow */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Lower transparency overlay */
+}
+
+.hero-text {
+    position: relative;
+    z-index: 1;
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Move down initially */
+    transition: opacity 1s, transform 1s; /* Slower transitions */
+}
+
+.hero-text.show-text {
+    opacity: 1; /* Show text */
+    transform: translateY(0); /* Move up */
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin: 10px 0 20px;
+}
+
+.cta-button {
+    background-color: #1cacbc; /* Updated blue color */
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 1s; /* Slower button transform */
+    display: inline-block;
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Move down initially */
+}
+
+.cta-button.show-button {
+    opacity: 1; /* Show button */
+    transform: translateY(0); /* Move up */
+}
+
+.cta-button:hover {
+    background-color: #258593; /* Darker shade of blue */
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 2rem;
+    gap: 20px;
+    margin-top: 40px; /* Reduced margin to minimize gap */
+}
+
+.card {
+    flex: 1 1 calc(33% - 20px); /* Adjust width to fit three cards per row */
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 50%; /* Make profile pictures round */
+    margin-bottom: 10px;
+}
+
+.card h2 {
+    margin-top: 0;
+    font-size: 2em;
+    color: #333; /* Default heading color */
+}
+
+.card p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #666; /* Default paragraph text color */
+}
+
+.card .role {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #1fb590; /* Updated green color */
+    margin-bottom: 10px;
+}
+
+.card .email {
+    font-size: 1em;
+    color: #999; /* Lighter text color */
+}
+
+@media (max-width: 768px) {
+    .cards-container {
+        padding: 1rem;
+    }
+
+    .card {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+footer {
+    background-color: #142c3c;
+    color: white;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.footer-links img {
+    height: 24px;
+    transition: transform 0.3s;
+}
+
+.footer-links img:hover {
+    transform: scale(1.2);
+}

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | DV at IU</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #f0f4f8;
+        }
+
+        header {
+            height: 110px;
+        }
+
+        .info-container {
+            display: flex;
+            margin: 20px;
+        }
+
+        .upcoming-events {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+        }
+
+        .upcoming-events h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .event-item {
+            margin-bottom: 15px;
+        }
+
+        .event-date {
+            font-weight: bold;
+            color: #199a52;
+        }
+
+        .event-description {
+            margin-top: 5px;
+            color: #333;
+        }
+
+        .content-container {
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        .card {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .values-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+
+        .value-item {
+            flex: 0 0 48%;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .value-item img {
+            max-width: 150px;
+            margin-bottom: 10px;
+        }
+
+        .value-item h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #258593;
+        }
+
+        .our-mission {
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        .events-section,
+        .sponsors-section {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .events-section h2,
+        .sponsors-section h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .workshop-card {
+            flex: 0 0 30%;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .workshop-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .workshop-card .content {
+            padding: 15px;
+        }
+
+        .workshop-card .content h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .sponsors-logos {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            align-items: center; /* Center-align logos */
+        }
+
+        .sponsors-logos img {
+            height: 100px; /* Set a consistent height for all logos */
+            width: auto; /* Maintain the original aspect ratio */
+            margin: 10px;
+            display: block; /* Prevent any automatic oval framing */
+            border-radius: 0; /* Ensure no border-radius is applied */
+        }
+
+        .sponsors-logos img[alt="Deloitte"] {
+            height: 70px;
+        }
+
+        .sponsors-section p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .section-container {
+            display: block;
+            width: 100%;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #199a52;
+        }
+
+        .about-us-logo {
+            width: 300px !important; /* Ensure this width is applied */
+            height: auto !important; /* Maintain the original aspect ratio */
+            display: block !important; /* Ensure the image displays as a block element */
+            margin: 0 auto !important; /* Center the image horizontally */
+            border-radius: 0 !important; /* Force no border-radius */
+            box-shadow: none !important; /* Remove any box-shadow if present */
+            border: none !important; /* Remove any border if applied */
+            padding: 20px
+        }
+
+        .about-us p, 
+        .our-mission p {
+            color: #333; /* Set text color to #333 */
+        }
+        /* Mobile menu styles */
+        .mobile-menu {
+            display: none; /* Hide by default */
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            background-color: #ffffff;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 200px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-menu li {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .mobile-menu a:hover {
+            background-color: #f0f4f8;
+        }
+
+        /* Show the mobile menu when toggled */
+        .mobile-menu.show {
+            display: block;
+        }
+
+        /* Style for the mobile menu button */
+        .mobile-menu-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            line-height: 1;
+            padding: 10px;
+            display: none; /* Hide by default */
+        }
+
+        .mobile-menu-icon::before {
+            content: "☰"; /* Hamburger icon */
+        }
+
+        /* Hide desktop menu on mobile */
+        .desktop-menu {
+            display: flex;
+        }
+
+        @media (max-width: 768px) {
+            .desktop-menu {
+                display: none; /* Hide desktop menu on mobile */
+            }
+
+            .mobile-menu-button {
+                display: block; /* Show the mobile menu button on mobile */
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="dv logo.png" alt="DV Logo" class="logo">
+            <span class="header-text">Data Visualization at IU</span>
+        </div>
+        <nav>
+            <ul class="desktop-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="team.html">Meet our Team</a></li>
+                <li><a href="lessons.html">Our Lessons</a></li>
+                <li><a href="professional-development.html">Professional Development</a></li>
+                <li><a href="current-semester.html">Calendar</a></li>
+                <li><a href="partner-with-us.html">Partner with Us</a></li>
+                <li><a href="apply.html">Join Us</a></li>
+            </ul>
+            <!-- Mobile menu button -->
+            <button class="mobile-menu-button" aria-label="Toggle menu">
+                <span class="mobile-menu-icon"></span>
+            </button>
+        </nav>
+        <!-- Mobile menu -->
+        <ul class="mobile-menu">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="team.html">Meet our Team</a></li>
+            <li><a href="lessons.html">Our Lessons</a></li>
+            <li><a href="professional-development.html">Professional Development</a></li>
+            <li><a href="current-semester.html">Calendar</a></li>
+            <li><a href="partner-with-us.html">Partner with Us</a></li>
+            <li><a href="apply.html">Join Us</a></li>
+        </ul>
+    </header>
+
+
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+            <h1>Data Visualization at IU</h1>
+            <p>From Data to Impact: Your Journey Starts Here</p>
+            <a href="apply.html" class="cta-button">Join Now</a>
+        </div>
+    </section>
+
+    <section id="info" class="info-container">
+        <div class="upcoming-events">
+            <h2>Upcoming Events</h2>
+            <div class="events-list">
+                <!-- Events will be dynamically inserted here by JavaScript -->
+            </div>
+        </div>
+
+        <div class="content-container">
+            <div class="cards-container">
+                <div class="section-container">
+                    <div class="card about-us">
+                        <img src="dv logo.png" alt="DV Logo" class="about-us-logo">
+                        <h2>About Us</h2>
+                        <p>Welcome to the Data Visualization Club at Indiana University. We focus on teaching <span class="highlight">data
+                            manipulation</span> and <span class="highlight">visualization</span> skills through various <span class="highlight">softwares</span> such as Tableau, Power BI,
+                            R, and more! Our weekly meetings involve workshops, guest speakers, and hands-on projects and case-competitions to
+                            prepare you for a <span class="highlight">data-driven career</span> in any field.</p>
+                    </div>
+                </div>
+
+                <div class="values-container">
+                    <div class="value-item">
+                        <img src="integrity.png" alt="Integrity Icon">
+                        <h3>Integrity</h3>
+                        <p>We uphold the highest standards of integrity in all of our actions.</p>
+                    </div>
+                    <div class="value-item">
+                        <img src="curiosity.png" alt="Curiosity Icon">
+                        <h3>Curiosity</h3>
+                        <p>We foster a culture of exploration and inquiry.</p>
+                    </div>
+                    <div class="value-item">
+                        <img src="community.png" alt="Community Icon">
+                        <h3>Community</h3>
+                        <p>We support a culture of inclusiveness and collaboration, every lesson, every day.</p>
+                    </div>
+                    <div class="value-item">
+                        <img src="growth.png" alt="Growth Icon">
+                        <h3>Growth</h3>
+                        <p>We encourage continuous learning and development, helping members reach their full potential.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Our Mission Section -->
+                <div class="section-container">
+                    <div class="card our-mission">
+                        <h2>Our Mission</h2>
+                        <p>
+                            The mission of Data Visualization at Indiana University is to educate and prepare future
+                            <span class="highlight">business professionals</span> with a unique skillset of <span class="highlight">data manipulation</span> across multiple
+                            platforms. The club focuses on teaching <span class="highlight">skills</span> such as <span class="highlight">Tableau</span>,
+                            <span class="highlight">Power BI</span>, and <span class="highlight">Python</span> that will result in a <span class="highlight">competitive advantage</span> in members'
+                            professional careers. DV at IU also aims to help its members grow as professionals through <span class="highlight">Kelley Workshops night</span>, club alumni <span class="highlight">guest speakers</span>, <span class="highlight">resume reviews</span>, and engaging meetings with
+                            <span class="highlight">corporate sponsors</span>.
+                        </p>
+
+                    </div>
+                </div>
+
+                <!-- Corporate Partners Section -->
+                <div class="section-container">
+                    <div class="card sponsors-section">
+                        <h2>Our Corporate Partners</h2>
+                        <div class="sponsors-logos">
+                            <img src="Deloitte.svg.png" alt="Deloitte">
+                            <img src="ey.png" alt="EY">
+                            <img src="kpmg.svg" alt="KPMG">
+                        </div>
+                        <p>A big thank you to our amazing corporate partners for your incredible support and collaboration. Your commitment to helping our members grow and develop has been a huge part of our success. With your active involvement in our workshops, you've given our members fantastic opportunities to learn, network, and advance in their careers. We truly appreciate your dedication and partnership.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Data Visualization at IU<br>
+            Kelley School of Business at Indiana University<br>
+            1275 E 10th St, Bloomington, IN 47405</p>
+        <div class="footer-links">
+            <a href="https://www.instagram.com/dataviz_iu/" target="_blank"><img src="instagram-icon.png"
+                    alt="Instagram"></a>
+            <a href="mailto:DataVisualizationAtIU@gmail.com"><img src="email-icon.png" alt="Email"></a>
+            <a href="http://www.linkedin.com/company/data-visualization-at-iu/" target="_blank"><img
+                    src="linkedin-icon.png" alt="LinkedIn"></a>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(() => {
+                const heroText = document.querySelector('.hero-text');
+                const ctaButton = document.querySelector('.cta-button');
+                heroText.classList.add('show-text');
+                ctaButton.classList.add('show-button');
+            }, 100);
+
+            const events = [
+                {date: '2024-08-26', description: ['First Day of Classes', 'Member Applications Open at 12 AM']},
+                {date: '2024-09-06', description: ['Member Applications Closes at 11:59 PM']},
+                {date: '2024-09-09', description: ['Lesson 1: 7:30 PM - 8:30 PM', 'DV 1-on-1 Chats Open at 12 AM']},
+                {date: '2024-09-16', description: ['Resume Workshop: 7:30 PM - 8:30 PM']},
+                {date: '2024-09-23', description: ['Lesson 2: 7:30 PM - 8:30 PM']},
+                {date: '2024-09-30', description: ['Lesson 3: 7:30 PM - 8:30 PM']},
+                {date: '2024-10-07', description: ['Corporate Event: 7:30 PM - 8:30 PM']},
+                {date: '2024-10-14', description: ['DV Social: 7:30 PM - 8:30 PM']},
+                {date: '2024-10-21', description: ['Lesson 4: 7:30 PM - 8:30 PM']},
+                {date: '2024-10-25', description: ['Semester Workshop: 12 PM - 2 PM']},
+                {date: '2024-10-28', description: ['KPMG Interview Workshop: 7:30 PM - 8:30 PM', 'Exec Apps Open at 12 AM']},
+                {date: '2024-11-04', description: ['Lesson 5: 7:30 PM - 8:30 PM']},
+                {date: '2024-11-11', description: ['Lesson 6: 7:30 PM - 8:30 PM', 'Case Comp Details Announced']},
+                {date: '2024-11-15', description: ['Exec Apps Close at 11:59 PM', 'DV 1-on-1 Chats Close at 11:59 PM']},
+                {date: '2024-11-17', description: ['Case Comp Materials Due at 11:59 PM']},
+                {date: '2024-11-18', description: ['Case Comp Presentations: 7:30 PM - 9:30 PM']},
+            ];
+
+            const today = new Date();
+            const eventsContainer = document.querySelector('.events-list');
+
+            events.forEach(event => {
+                // Create a Date object and set the time to noon (to prevent time zone shifts)
+                const eventDate = new Date(event.date + 'T12:00:00');
+
+                if (eventDate >= today) {
+                    const dayOfWeek = eventDate.toLocaleDateString('en-US', {weekday: 'long', timeZone: 'America/New_York'});  // Specify the time zone
+                    const formattedDate = eventDate.toLocaleDateString('en-US', {month: 'long', day: 'numeric', timeZone: 'America/New_York'});  // Specify the time zone
+
+                    const eventItem = document.createElement('div');
+                    eventItem.classList.add('event-item');
+
+                    const eventDateElement = document.createElement('div');
+                    eventDateElement.classList.add('event-date');
+                    eventDateElement.textContent = `${dayOfWeek}, ${formattedDate}`;
+
+                    eventItem.appendChild(eventDateElement);
+
+                    event.description.forEach(desc => {
+                        const eventDescription = document.createElement('div');
+                        eventDescription.classList.add('event-description');
+                        eventDescription.textContent = desc;
+                        eventItem.appendChild(eventDescription);
+                    });
+
+                    eventsContainer.appendChild(eventItem);
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+
+            mobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.toggle('show');
+            });
+        });
+    </script>
+</body>
+
+</html>
