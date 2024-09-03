@@ -322,7 +322,7 @@
                     <div class="card about-us">
                         <img src="dv logo.png" alt="DV Logo" class="about-us-logo">
                         <h2>About Us</h2>
-                        <p>Welcome to the Data Visualization Club at Indiana University! We focus on teaching <span class="highlight">data
+                        <p>Welcome to the Data Visualization Club at Indiana University. We focus on teaching <span class="highlight">data
                             manipulation</span> and <span class="highlight">visualization</span> skills through various <span class="highlight">softwares</span> such as Tableau, Power BI,
                             R, and more! Our weekly meetings involve workshops, guest speakers, and hands-on projects and case-competitions to
                             prepare you for a <span class="highlight">data-driven career</span> in any field.</p>
@@ -408,6 +408,7 @@
 
             const events = [
                 {date: '2024-08-26', description: ['First Day of Classes', 'Member Applications Open at 12 AM']},
+                {date: '2024-09-03', description: ['Callout Meeting: https://iu.zoom.us/j/81098350636']},
                 {date: '2024-09-06', description: ['Member Applications Closes at 11:59 PM']},
                 {date: '2024-09-09', description: ['Lesson 1: 7:30 PM - 8:30 PM', 'DV 1-on-1 Chats Open at 12 AM']},
                 {date: '2024-09-16', description: ['Resume Workshop: 7:30 PM - 8:30 PM']},
@@ -426,15 +427,17 @@
             ];
 
             const today = new Date();
+            // Set today to the start of the day to avoid time discrepancies
+            today.setHours(0, 0, 0, 0);
             const eventsContainer = document.querySelector('.events-list');
 
             events.forEach(event => {
-                // Create a Date object and set the time to noon (to prevent time zone shifts)
-                const eventDate = new Date(event.date + 'T12:00:00');
-
+                // Create a Date object for event date
+                const eventDate = new Date(event.date + 'T00:00:00');
+                // Check if the event date is today or in the future
                 if (eventDate >= today) {
-                    const dayOfWeek = eventDate.toLocaleDateString('en-US', {weekday: 'long', timeZone: 'America/New_York'});  // Specify the time zone
-                    const formattedDate = eventDate.toLocaleDateString('en-US', {month: 'long', day: 'numeric', timeZone: 'America/New_York'});  // Specify the time zone
+                    const dayOfWeek = eventDate.toLocaleDateString('en-US', {weekday: 'long', timeZone: 'America/New_York'});
+                    const formattedDate = eventDate.toLocaleDateString('en-US', {month: 'long', day: 'numeric', timeZone: 'America/New_York'});
 
                     const eventItem = document.createElement('div');
                     eventItem.classList.add('event-item');
@@ -457,6 +460,7 @@
             });
         });
     </script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const mobileMenuButton = document.querySelector('.mobile-menu-button');
